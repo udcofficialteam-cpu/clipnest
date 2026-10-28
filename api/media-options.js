@@ -65,9 +65,9 @@ module.exports = async function handler(req, res) {
     });
   }
 
-  const cobaltApiUrl = "https://co.wuk.sh/api/json";
+  const cobaltApiUrl = "https://api.cobalt.tools/";
   const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 15000);
+  const timeout = setTimeout(() => controller.abort(), 20000);
 
   try {
     const cobaltResponse = await fetch(cobaltApiUrl, {
@@ -78,7 +78,7 @@ module.exports = async function handler(req, res) {
       },
       body: JSON.stringify({
         url: mediaUrl.href,
-        vQuality: "720",
+        videoQuality: "720",
         filenameStyle: "pretty"
       }),
       signal: controller.signal
@@ -91,18 +91,18 @@ module.exports = async function handler(req, res) {
       console.error("Cobalt response:", data);
 
       return res.status(502).json({
-        error: "The media provider request failed.",
+        error: "Cobalt provider request failed.",
         providerStatus: cobaltResponse.status
       });
     }
 
     if (data.status === "error") {
-      console.error("Cobalt error:", data);
+      console.error("Cobalt returned an error:", data);
 
       return res.status(400).json({
         error:
-          data.text ||
           data.error?.code ||
+          data.text ||
           "The provider could not process this URL."
       });
     }
