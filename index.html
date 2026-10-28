@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8ff">
+  <title>ClipNest — Online Video & Audio Tools</title>
+  <meta name="description" content="Check media links and access authorized video or audio download options with ClipNest. Simple, privacy-conscious tools and clear platform limitations.">
+  <link rel="canonical" href="https://example.com/">
+  <meta property="og:title" content="ClipNest — Online Video & Audio Tools">
+  <meta property="og:description" content="A clean, simple workflow for media you own or are authorized to download.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://example.com/">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/script.js" defer></script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"ClipNest","applicationCategory":"MultimediaApplication","operatingSystem":"Any","description":"A privacy-conscious interface for checking authorized media download options."}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="brand" href="/" aria-label="ClipNest home">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M8 5.5h10.5L25 12v14.5H8z"/><path d="M18 5.5V12h7M12 17h9M12 21h6"/></svg></span>
+        <span>clipnest<span class="brand-dot">.</span></span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open navigation"><span></span><span></span></button>
+      <div class="nav-links" id="navLinks">
+        <a href="#how-it-works">How it works</a>
+        <a href="#platforms">Platforms</a>
+        <a href="#faq">FAQ</a>
+        <a href="/contact.html">Contact</a>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">☾</button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> A simpler media workflow</div>
+        <h1>Your media.<br><span class="gradient-text">Your way.</span></h1>
+        <p class="hero-lead">Check a supported media link and explore available options for content you own or are authorized to download.</p>
+        <div class="trust-pills"><span>✦ Simple workflow</span><span>◈ Privacy-conscious</span><span>✓ Clear limitations</span></div>
+      </div>
+      <div class="tool-card" id="downloader">
+        <div class="tool-card-top">
+          <div class="tool-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 17v3h16v-3"/></svg></div>
+          <div><h2>Get media options</h2><p>Paste a public link to check support</p></div>
+          <span class="secure-tag"><span></span> Secure flow</span>
+        </div>
+        <form id="mediaForm" novalidate>
+          <label class="sr-only" for="mediaUrl">Media URL</label>
+          <div class="url-field">
+            <span class="link-symbol" aria-hidden="true">↗</span>
+            <input id="mediaUrl" name="mediaUrl" type="url" placeholder="Paste your video URL here..." autocomplete="url" spellcheck="false" required>
+            <button class="paste-btn" id="pasteBtn" type="button">Paste</button>
+          </div>
+          <button class="primary-btn" id="submitBtn" type="submit">Check media options <span aria-hidden="true">→</span></button>
+          <p class="form-note">Only use links for content you own or have permission to download. We don't bypass private access, DRM, or paywalls.</p>
+          <div id="status" class="status" role="status" aria-live="polite" hidden></div>
+          <section id="results" class="results" aria-live="polite" hidden></section>
+        </form>
+      </div>
+      <div class="hero-orb orb-one" aria-hidden="true"></div><div class="hero-orb orb-two" aria-hidden="true"></div>
+    </section>
+
+    <section class="platform-strip wrap" aria-label="Platforms we recognize">
+      <p>LINKS WE CAN RECOGNIZE</p>
+      <div class="platform-logos">
+        <span><b class="platform-letter yt">▶</b>YouTube</span><span><b class="platform-letter fb">f</b>Facebook</span><span><b class="platform-letter ig">◎</b>Instagram</span><span><b class="platform-letter tt">♪</b>TikTok</span><span><b class="platform-letter xx">𝕏</b>X</span><span><b class="platform-letter vm">v</b>Vimeo</span>
+      </div>
+      <small>Recognizing a link does not guarantee that downloading is available.</small>
+    </section>
+
+    <section class="section wrap" id="how-it-works">
+      <div class="section-heading"><span class="eyebrow">MADE TO FEEL EASY</span><h2>Three steps. <span class="gradient-text">No guesswork.</span></h2><p>A transparent workflow that shows what is—and isn't—supported.</p></div>
+      <div class="steps-grid">
+        <article class="step-card"><span class="step-number">01</span><div class="step-illustration lilac">↗</div><h3>Paste a link</h3><p>Enter a public media URL from a recognized website. We validate the address before checking support.</p></article>
+        <article class="step-card"><span class="step-number">02</span><div class="step-illustration blue">◈</div><h3>Check availability</h3><p>The configured provider can return genuine formats and quality options—or explain why none are available.</p></article>
+        <article class="step-card"><span class="step-number">03</span><div class="step-illustration mint">↓</div><h3>Choose an option</h3><p>When an authorized provider supplies a valid download link, use it to save your selected media.</p></article>
+      </div>
+    </section>
+
+    <section class="feature-band">
+      <div class="wrap feature-layout">
+        <div><span class="eyebrow">BUILT AROUND TRUST</span><h2>Useful tools.<br><span class="gradient-text">Honest answers.</span></h2><p>ClipNest is designed to make supported media workflows clear, without pretending every platform or format is available.</p><a class="text-link" href="#faq">Read common questions <span>→</span></a></div>
+        <div class="feature-list">
+          <article><span class="feature-icon">⚡</span><div><h3>Clear status updates</h3><p>Know when a link is being checked, unsupported, or ready for options.</p></div></article>
+          <article><span class="feature-icon">▣</span><div><h3>Responsive by design</h3><p>A focused interface that works on phones, tablets, and desktops.</p></div></article>
+          <article><span class="feature-icon">⌁</span><div><h3>Privacy-conscious</h3><p>No account is needed for this interface. Configure server-side retention and logging before production.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap" id="platforms">
+      <div class="section-heading"><span class="eyebrow">SUPPORTED LINKS</span><h2>One place to start.</h2><p>Platform recognition is informational. Actual support depends on permissions, provider access, and platform rules.</p></div>
+      <div class="platform-grid">
+        <article class="platform-card"><span class="platform-letter yt">▶</span><div><h3>YouTube</h3><p>Use official download features where available. Third-party processing may be restricted.</p></div><span class="card-arrow">↗</span></article>
+        <article class="platform-card"><span class="platform-letter fb">f</span><div><h3>Facebook</h3><p>Public links may be recognized; private or restricted media is not supported.</p></div><span class="card-arrow">↗</span></article>
+        <article class="platform-card"><span class="platform-letter ig">◎</span><div><h3>Instagram</h3><p>Only content and methods you are authorized to access and save.</p></div><span class="card-arrow">↗</span></article>
+        <article class="platform-card"><span class="platform-letter tt">♪</span><div><h3>TikTok</h3><p>Availability depends on the content and the platform's permitted options.</p></div><span class="card-arrow">↗</span></article>
+        <article class="platform-card"><span class="platform-letter xx">𝕏</span><div><h3>X (Twitter)</h3><p>Recognized links are checked by the configured authorized provider.</p></div><span class="card-arrow">↗</span></article>
+        <article class="platform-card"><span class="platform-letter vm">v</span><div><h3>Vimeo & more</h3><p>Other sites work only when a supported, permitted integration is configured.</p></div><span class="card-arrow">↗</span></article>
+      </div>
+    </section>
+
+    <section class="faq-section" id="faq">
+      <div class="wrap faq-layout"><div class="section-heading"><span class="eyebrow">NEED TO KNOW</span><h2>Questions, <span class="gradient-text">answered.</span></h2><p>Important details before you use a media tool.</p></div>
+        <div class="faq-list">
+          <details><summary>Is every link downloadable?</summary><p>No. A recognized URL does not guarantee that a platform permits downloading or that a provider can access it. The app should show the actual provider response.</p></details>
+          <details><summary>Can I download private videos?</summary><p>No. ClipNest is not designed to bypass private-content restrictions, logins, DRM, paywalls, or other access controls.</p></details>
+          <details><summary>Why does the checker say the provider is not configured?</summary><p>This starter project needs an authorized media provider with a documented API. Add its endpoint and API key to Vercel environment variables; never put secrets in browser JavaScript.</p></details>
+          <details><summary>Is ClipNest affiliated with YouTube or other platforms?</summary><p>No. ClipNest is an independent project and is not endorsed by or affiliated with YouTube, Meta, TikTok, X, Vimeo, or their owners.</p></details>
+          <details><summary>Is it free?</summary><p>This starter code has no paid subscription feature. Hosting, provider API usage, and media processing may have separate costs.</p></details>
+        </div>
+      </div>
+    </section>
+    <section class="responsible wrap"><div class="responsible-icon">ⓘ</div><div><h2>Use media responsibly</h2><p>Download only media you own, have permission to use, or that is otherwise legally available for download. You are responsible for complying with copyright law and each platform's terms.</p></div><a href="/copyright.html">Copyright policy →</a></section>
+  </main>
+
+  <footer class="site-footer"><div class="wrap footer-main"><a class="brand" href="/"><span class="brand-mark"><svg viewBox="0 0 32 32"><path d="M8 5.5h10.5L25 12v14.5H8z"/><path d="M18 5.5V12h7M12 17h9M12 21h6"/></svg></span><span>clipnest<span class="brand-dot">.</span></span></a><p>Make your media workflow feel simple.</p><div class="footer-links"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a><a href="/copyright.html">Copyright</a></div></div><div class="wrap footer-bottom"><span>© <span id="year"></span> ClipNest. All rights reserved.</span><span>Independent tool · Not affiliated with social platforms</span></div></footer>
+</body>
+</html>
